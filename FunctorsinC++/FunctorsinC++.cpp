@@ -24,6 +24,10 @@ public:
 int main() {
 	Abela obj1; // Create an object of type Abela 
 	obj1 ();	// Calling the object as a function. Functor 
+	
+	Abela obj2; 
+	// We could also call Fuctors using the . operator. 
+	obj2.operator()(); 
 
 	return 0; 
 }
