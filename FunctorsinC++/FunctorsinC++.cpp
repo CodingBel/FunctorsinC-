@@ -8,20 +8,25 @@
 */
 
 #include <iostream>
-// Functors just like regualr functions could also take arguments and return values 
-// if programmed to do so. 
-
 class Abela {
+private: 
+	int initialValue = 0; 
 public: 
-	int operator () (int num1, int num2) {
-		return num1 + num2; 
+	Abela(int zNum) {
+		initialValue = zNum; 
+	}
+
+	int operator ()(int theNum) {
+		return initialValue + theNum; 
 	}
 };
 
 int main() {
-	Abela obj1; 
-	int sum = obj1.operator()(5, 6); 
 
-	std::cout << "Sum of the two numbers is: " << sum << std::endl; 
+	Abela obj1(100); // parametreized constructor 
+	int sum = obj1(50); // Passing an int value to Z Functor
+
+	std::cout << "The Value of sum is: " << sum << std::endl; 
+
 	return 0; 
 }
