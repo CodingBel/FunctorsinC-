@@ -8,26 +8,20 @@
 */
 
 #include <iostream>
+// Functors just like regualr functions could also take arguments and return values 
+// if programmed to do so. 
 
 class Abela {
 public: 
-	Abela() {	// This is just a consturctor 
-		std::cout << "An object of Class Abela has been created" << std::endl; 
+	int operator () (int num1, int num2) {
+		return num1 + num2; 
 	}
-	void operator ()() {	// class Abela's Functor 
-		std::cout << "\nThis is a C++ Functor!!" << std::endl; 
-		std::cout << "Welcome to Functors" << std::endl;
-	}
-
 };
 
 int main() {
-	Abela obj1; // Create an object of type Abela 
-	obj1 ();	// Calling the object as a function. Functor 
-	
-	Abela obj2; 
-	// We could also call Fuctors using the . operator. 
-	obj2.operator()(); 
+	Abela obj1; 
+	int sum = obj1.operator()(5, 6); 
 
+	std::cout << "Sum of the two numbers is: " << sum << std::endl; 
 	return 0; 
 }
